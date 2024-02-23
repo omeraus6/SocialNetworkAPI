@@ -37,17 +37,5 @@ const reactionSchema = new Schema(
   }
 );
 
-// Create a virtual property `responses` that gets the amount of response per video
-videoSchema
-  .virtual('getResponses')
-  // Getter
-  .get(function () {
-    return this.responses.length;
-  });
 
-// Initialize our Video model
-const Reaction = model('reaction', reactionSchema);
-
-module.exports = Reaction;
-
-//module.exports = reactionSchema;
+module.exports = reactionSchema;

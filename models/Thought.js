@@ -34,11 +34,11 @@ const thoughtSchema = new Schema(
 );
 
 
-//thoughtSchema
- // .virtual('reactionCount')
- // .get(function () {
- //   return this.reactions.length;
- // });
+thoughtSchema
+ .virtual('reactionCount')
+  .get(function () {
+    return this.reactions.length;
+ });
 
 const Thought = model('thought', thoughtSchema);
 //console.log(formatDate("2022-05-24T01:31:56.774Z"))
