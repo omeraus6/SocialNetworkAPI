@@ -3,18 +3,7 @@ const User = require('../models/User');
 
 module.exports = {
 
-  //getSingleUser(req, res) {
-    //User.findOne({ _id: req.params.userId })
-      //.select('-__v')
-      //.populate('friends')
-      //.populate('thoughts')
-      //.then((user) =>
-      //  !user
-        //  ? res.status(404).json({ message: 'No user with that ID' })
-          //: res.json(user)
-     // )
-     // .catch((err) => res.status(500).json(err));
-  //},
+
 
   async getUsers(req, res) {
       try {
@@ -41,16 +30,7 @@ module.exports = {
         res.status(500).json(err);
       }
   },
-  //create a new user
-  //createUser(req, res) {
-    //User.create({
-      //  username: req.body.username,
-        //email: req.body.email
-    //})
-      //.then((dbUserData) => res.json(dbUserData))
-      //.catch((err) => res.status(500).json(err));
-  //},
-
+  
   async createUser(req, res) {
     try {
       const dbUserData = await User.create(req.body);
@@ -60,26 +40,7 @@ module.exports = {
     }
   },
 
- // updateUser(req, res) {
-      //User.findOneAndUpdate(
-        //  { _id: req.params.userId }, 
-          //{
-            //username: req.body.username,
-            //email: req.body.email
-          //}, 
-          //{ new: true }, 
-          //(err, result) => {
-            //if (result) {
-              //res.status(200).json(result);
-              //console.log(`Updated: ${result}`);
-            //} else {
-              //console.log(err);
-              //res.status(500).json({ message: 'error', err });
-            //}
-          //}
-      //)
-  //},
-
+ 
   async updateUser(req, res) {
     try {
       const user = await User.findOneAndUpdate(
