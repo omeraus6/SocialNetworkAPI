@@ -1,6 +1,6 @@
-const { Schema, Types } = require('mongoose');
-const { User } = require('./User');
-const {Reaction} = require('./Reaction');
+const { Schema, model } = require('mongoose');
+//const { User } = require('./User');
+const Reaction = require('./Reaction');
 const formatDate = require('../utils/format.js');
 
 
@@ -17,7 +17,7 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      //get: (date) => formatDate(date)
+      get: (date) => formatDate(date)
 
     },
     username: {   
@@ -43,7 +43,7 @@ thoughtSchema
  });
 
 const Thought = model('thought', thoughtSchema);
-//console.log(formatDate("2022-05-24T01:31:56.774Z"))
+console.log(formatDate("2022-05-24T01:31:56.774Z"))
 
 module.exports = Thought;
 
